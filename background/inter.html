@@ -1,0 +1,101 @@
+<html>
+<head>
+    <meta name="img 3" content="width=device-width, initial-scale=1.0">
+    <title>web page design</title>
+    <link rel="stylesheet" href="internatonil.css">
+</head>
+<body>
+
+<div id="hero">
+
+   <div class="navbar">
+       <img src="img/logo.jpg" class="logo">
+       <div class="user">
+           <button type="button">Explore</button>
+           <img src="img/uni.jpg" class="logo">
+       </div>
+   </div>   
+
+<div class="container">
+    <div class="info">
+      <h1>DISCOVER</h1>
+      <P>Lorem, ipsum delor sit amet consectetur adipisicing elit.
+           Mollitia corporis dolor ipsum exercitationem, suscipit, eveniet quaerat minima
+            inventore quasi iusto iure? Corrupti adipisci quaerat harum voluptatibus ducimus id magni
+             expedita.</P>
+             <input type="text" placeholder="search">
+      
+      
+    </div>
+    
+</div>
+<div class="slider">
+    <img src="img/left.png" id="prev">
+    <div class="preview">
+        <img src="img/scenery.jpg" class=" active thumbnail">
+        <img src="img/img1.jpg" class="thumbnail">
+        <img src="img/img2.jpg" class="thumbnail">
+        <img src="img/img3.jpg" class="thumbnail">
+        <img src="img/img4.jpg" class="thumbnail">
+        <img src="img/img5.jpg" class="thumbnail">
+        
+        </div>
+    <img src="img/right.png" id="next">
+
+
+</div>
+</div>
+
+
+
+<script>
+
+var prev = document.getElementById("prev");
+var next = document.getElementById("next");
+var thumbnail = document.getElementsByClassName("thumbnail")
+ var hero = document.getElementById("hero")       
+
+
+var backgroundimg = new Array(
+    "img/scenery.jpg",
+    "img/img1.jpg",
+    "img/img2.jpg",
+    "img/img3.jpg",
+    "img/img4.jpg",
+    "img/img5.jpg",
+    );
+  let i = 0;
+      next.onclick = function(){
+
+        if(i < 5){
+
+            hero.style.backgroundImage = 'url("'+backgroundimg[i+1]+'")';
+            console.log("hero:",backgroundimg[i+1]);
+            thumbnail[i+1].classList.add("active");
+            thumbnail[i].classList.remove("active");
+            
+                i++;
+
+        }
+    }
+          prev.onclick = function(){
+
+            if(i > 0){
+
+                hero.style.backgroundImage = 'url("'+backgroundimg[i-1]+'")';
+                console.log("hero:",backgroundimg[i-1]);
+                thumbnail[i-1].classList.add("active");
+                thumbnail[i].classList.remove("active")
+                    i--;
+            }
+         
+      }
+
+</script>
+
+
+
+
+
+</body>
+</html>
